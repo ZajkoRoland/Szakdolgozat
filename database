@@ -1,0 +1,281 @@
+/-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
+--
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2021. Ápr 21. 23:01
+-- Kiszolgáló verziója: 10.4.18-MariaDB
+-- PHP verzió: 8.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Adatbázis: `vortex`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `felhasznalok`
+--
+
+CREATE TABLE `felhasznalok` (
+  `usersId` int(11) NOT NULL,
+  `usersName` varchar(128) NOT NULL,
+  `usersEmail` varchar(128) NOT NULL,
+  `usersUid` varchar(128) NOT NULL,
+  `usersPassword` varchar(128) NOT NULL,
+  `userLevel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`usersId`, `usersName`, `usersEmail`, `usersUid`, `usersPassword`, `userLevel`) VALUES
+(1, 'user1', 'user1@gmail.com', 'user1', '$2y$10$qgzU6.3MRpjhTSSmaNl0g.IpPw6xF6YWd37UaVkHZUtAE0aerE.bK', 0),
+(2, 'Zajkó Roland', 'admin@admin.com', 'Admin', '$2y$10$LAJKqty66nsEo6.BIZzVjuIqF7oN7eQn0H/D1IVzHyUkjLeMf4O4i', 1),
+(3, 'user2', 'user2@gmail.com', 'user2', '$2y$10$iX6UkURraxpNGb1.PLdwKOWX6IL4E4nhuEzyEYzVBr47dySKRuHYK', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `jatek_1`
+--
+
+CREATE TABLE `jatek_1` (
+  `szo_id` int(11) NOT NULL,
+  `magyar` text NOT NULL,
+  `angol` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `jatek_1`
+--
+
+INSERT INTO `jatek_1` (`szo_id`, `magyar`, `angol`) VALUES
+(3, 'Van egy nővérem', 'I have a sister'),
+(4, 'Van testvéred?', 'Do you have siblings?'),
+(5, 'Folytatni akarjuk', 'We want to continue'),
+(6, 'Építenünk kell egy házat', 'We need to build a house'),
+(7, 'Meg kell állítanom az autót', 'I have to stop the car'),
+(8, 'Nem akarok elmenni', 'I do not want to leave'),
+(9, 'Kék az ég', 'The sky is blue'),
+(10, 'Van egy macska a fán', 'There is a cat in the tree'),
+(11, 'Látod a virágokat?', 'Do you see the flowers?'),
+(12, 'Milyen színű a madár?', 'What color is the bird?'),
+(14, 'Foglaljon helyet', 'Take a seat'),
+(15, 'Turista vagyok', 'I\'m a tourist'),
+(16, 'Magyarországon élek', 'I live in Hungary'),
+(18, 'Jó reggelt', 'Good morning'),
+(19, 'Jó estét', 'Good evening'),
+(20, 'Hamarosan találkozunk', 'See you soon '),
+(21, 'Később találkozunk', 'See you later'),
+(22, 'Örülök, hogy találkoztunk', 'I’m glad to meet you'),
+(23, 'Hogy vagy?', 'How are you?'),
+(24, 'Köszönöm, jól vagyok', 'I’m fine, thanks'),
+(25, 'Fáj a torkom', 'I have a sore throat'),
+(26, 'Lázas vagyok', 'I have a fever'),
+(27, 'Tudsz sakkozni?', 'Can you play chess?'),
+(28, 'Beszélsz németül?', 'Do you speak German?'),
+(29, 'Remek játékos volt', 'He was an excellent player'),
+(30, 'Nem játszott valami jól', 'He didn\'t play too well'),
+(31, 'Javítani akarják az angoljukat', 'They want to improve their English'),
+(32, 'Szeretnék venni valamit', 'I would like to buy something'),
+(33, 'Nincs tollam', 'I have no pen'),
+(34, 'Senki sem él ott', 'Nobody lives there'),
+(35, 'Sehol sem találtam', 'I find it nowhere'),
+(36, 'Nincs könyvem', 'I have no book'),
+(37, 'Ne aggódjon emiatt', 'Don\'t worry about it'),
+(38, 'Nem fontos', 'It\'s not important'),
+(39, 'Elnézést hogy elkéstem', 'Sorry I\'m late'),
+(40, 'Ellopták a pénztárcámat', 'My purse has been stolen'),
+(41, 'Megtámadtak', 'I\'ve been attacked'),
+(42, 'Sokat tanulok', 'Studying a lot'),
+(43, 'Mint általában', 'Same as usual'),
+(44, 'Együtt jártunk iskolába', 'We were at school together'),
+(45, 'Én Franciaországban élek', 'I live in France'),
+(46, 'Külföldön akartam élni', 'I wanted to live abroad'),
+(47, 'Körülbelül egy éve', 'About a year'),
+(48, 'Néhány hónapig', 'A few months'),
+(49, 'Gyűlölöm a vásárlást', 'I hate shopping'),
+(50, 'Sokat olvasok', 'I read a lot'),
+(51, 'Pillanatnyilag nem dolgozom', 'I\'m not working at the moment'),
+(52, 'Gyakorlaton vagyok', 'I\'m on work experience'),
+(53, 'Nem jártam egyetemre', 'I didn\'t go to university'),
+(54, 'Tetszik a ruhád', 'I like your outfit');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `jatek_2`
+--
+
+CREATE TABLE `jatek_2` (
+  `id` int(11) NOT NULL,
+  `magyar` varchar(100) NOT NULL,
+  `angol` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `jatek_2`
+--
+
+INSERT INTO `jatek_2` (`id`, `magyar`, `angol`) VALUES
+(1, 'jelentkezni', 'apply'),
+(2, 'gyönyörű', 'gorgeous'),
+(3, 'eredmény', 'result'),
+(4, 'teljesítmény', 'performance'),
+(5, 'esetleg', 'might'),
+(6, 'gazdasági', 'economic'),
+(7, 'szövetségi', 'federal'),
+(8, 'biztos', 'sure'),
+(9, 'elhagyott', 'abandon'),
+(10, 'képesség', 'ability'),
+(11, 'hiány', 'absence'),
+(12, 'elfogad', 'accept'),
+(13, 'szerint', 'according'),
+(14, 'beismerni', 'admit'),
+(15, 'elismerni', 'acknowledge'),
+(16, 'tevékenység', 'activity'),
+(17, 'előre', 'ahead'),
+(18, 'célja', 'purpose'),
+(19, 'ellen', 'against'),
+(20, 'ügynökség', 'agency'),
+(21, 'egyetért', 'agree'),
+(22, 'majdnem', 'almost'),
+(23, 'összeg', 'amount'),
+(24, 'között', 'among'),
+(25, 'elemzés', 'analysis'),
+(26, 'elérhető', 'available'),
+(27, 'elkerül', 'avoid'),
+(28, 'által', 'by'),
+(29, 'jelölt', 'candidate'),
+(30, 'tábla', 'board'),
+(31, 'központ', 'center'),
+(32, 'központi', 'central'),
+(33, 'század', 'century'),
+(34, 'gyűjtemény', 'collection'),
+(35, 'főiskola', 'college'),
+(36, 'kereskedelmi', 'commercial'),
+(37, 'nehéz', 'difficult'),
+(38, 'irány', 'direction'),
+(39, 'álom', 'dream'),
+(40, 'kelet', 'east'),
+(41, 'gazdasági', 'economic'),
+(42, 'gazdaság', 'economy'),
+(43, 'hatás', 'effect'),
+(44, 'erőfeszítés', 'effort'),
+(45, 'bármelyik', 'either'),
+(46, 'választás', 'selection'),
+(47, 'este', 'evening'),
+(48, 'érez', 'feel'),
+(49, 'érzés', 'feeling'),
+(50, 'tölt', 'fill'),
+(51, 'külföldi', 'foreign'),
+(52, 'elfelejt', 'forget'),
+(53, 'korábbi', 'former'),
+(54, 'előre', 'forward'),
+(55, 'elképzel', 'imagine'),
+(56, 'hatás', 'impact'),
+(57, 'érdekes', 'interesting'),
+(58, 'nemzetközi', 'international'),
+(59, 'többség', 'majority'),
+(60, 'lehet', 'may'),
+(61, 'mérés', 'measurement'),
+(62, 'média', 'media'),
+(63, 'tag', 'member'),
+(64, 'szükséges', 'necessary'),
+(65, 'hálózat', 'network'),
+(66, 'hírek', 'news'),
+(67, 'saját', 'own'),
+(68, 'tulajdonos', 'owner'),
+(69, 'oldal', 'page'),
+(70, 'elnök', 'president'),
+(71, 'nyomás', 'pressure'),
+(72, 'tesz', 'put'),
+(73, 'minőség', 'quality'),
+(74, 'kérdés', 'question'),
+(75, 'gyorsan', 'quickly'),
+(76, 'kutatás', 'research'),
+(77, 'forrás', 'resource'),
+(78, 'felelősség', 'responsibility'),
+(79, 'visszatérés', 'return'),
+(80, 'felfed', 'reveal'),
+(81, 'kockázat', 'risk'),
+(82, 'biztonság', 'security'),
+(83, 'keresni', 'seek'),
+(84, 'látszik', 'seem'),
+(85, 'idősebb', 'senior'),
+(86, 'lövés', 'shot'),
+(87, 'kellene', 'should'),
+(88, 'váll', 'shoulder'),
+(89, 'forrás', 'source'),
+(90, 'dél', 'south'),
+(91, 'déli', 'southern'),
+(92, 'beszél', 'speak'),
+(93, 'stratégia', 'strategy'),
+(94, 'hirtelen', 'suddenly'),
+(95, 'javasol', 'suggest'),
+(96, 'gondolat', 'thought'),
+(97, 'fenyegetés', 'threat'),
+(98, 'fa', 'tree'),
+(99, 'próba', 'trial'),
+(100, 'próbál', 'try');
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  ADD PRIMARY KEY (`usersId`);
+
+--
+-- A tábla indexei `jatek_1`
+--
+ALTER TABLE `jatek_1`
+  ADD PRIMARY KEY (`szo_id`);
+
+--
+-- A tábla indexei `jatek_2`
+--
+ALTER TABLE `jatek_2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `usersId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT a táblához `jatek_1`
+--
+ALTER TABLE `jatek_1`
+  MODIFY `szo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT a táblához `jatek_2`
+--
+ALTER TABLE `jatek_2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;/
